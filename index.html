@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organismo.obj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="captcha-overlay">
+        <div class="captcha-box">
+            <h2>Prueba de Conciencia</h2>
+            <img src="assets/captcha1.jpg" alt="Captcha" id="captcha-img"> 
+            <input type="text" id="captcha-input" placeholder="Ingresa la palabra">
+            <button id="btn-captcha">Verifica si eres un organismo vivo</button>
+            <p id="captcha-error"></p>
+        </div>
+    </div>
+
+    <div id="main-content" class="blurred">
+        
+        <nav id="sidebar">
+            <h3>Menú del Sistema</h3>
+            <ul>
+                <li><a href="#">Investigación</a></li>
+                <li><a href="#">Equipo</a></li>
+            </ul>
+            <div id="historial">
+                <h4>Historial de Memoria</h4>
+                <ul id="lista-historial"></ul>
+            </div>
+        </nav>
+
+        <main id="chat-interface">
+            <div id="pantalla-visual">
+                <div id="efecto-visual"></div>
+                <video id="webcam" autoplay playsinline style="display:none;"></video>
+                <img id="rostro-final" src="" style="display:none;" alt="Mi nuevo rostro">
+            </div>
+
+            <div id="dialogo-contenedor">
+                <p id="pregunta-texto">Cargando conciencia...</p>
+                <div id="opciones-contenedor">
+                    <button id="btn-opcion-a" class="opcion-btn"></button>
+                    <button id="btn-opcion-b" class="opcion-btn"></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

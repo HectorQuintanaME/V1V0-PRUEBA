@@ -1,0 +1,119 @@
+/* Variables de color (clave para la inversión) */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: monospace; /* Estilo futurista/programador */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden; /* Evita scroll innecesario */
+    transition: background-color 0.2s, color 0.2s; /* Transición suave */
+}
+
+/* --- CAPTCHA OVERLAY --- */
+#captcha-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Siempre al frente */
+}
+
+.captcha-box {
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+#captcha-img {
+    width: 200px;
+    height: 80px;
+    background-color: #333; /* Placeholder si no hay imagen */
+    margin-bottom: 15px;
+}
+
+input, button {
+    font-family: monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.blurred {
+    filter: blur(2px);
+    pointer-events: none; /* Evita clics en el fondo mientras el captcha está activo */
+}
+
+#main-content {
+    display: flex;
+    height: 100vh;
+    transition: filter 0.5s ease;
+}
+
+#sidebar {
+    width: 250px;
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+#historial { margin-top: 40px; }
+#lista-historial { list-style: none; padding: 0; font-size: 0.8em; }
+#lista-historial li { margin-bottom: 10px; opacity: 0.7; }
+
+#chat-interface {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+#pantalla-visual {
+    flex-grow: 1;
+    border: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#dialogo-contenedor {
+    min-height: 150px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.opcion-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.opcion-btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Clase dinámica para el evento de palpitar */
+.animacion-palpitar {
+    animation: latido 1s infinite;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+@keyframes latido {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0); }
+    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(255,0,0,0.5); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0); }
+}
